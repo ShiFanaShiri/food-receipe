@@ -3,73 +3,519 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <title>Food Recepies</title>
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHhcucClCALHwc_ldUU7GMg31Qsc6RKc7keR7l9QzUaeTk3ohN77f95Zlmhx8eUHoxidY&usqp=CAU">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+    svg{
+        margin-left: 35px;
+    }
+    .card:hover{
+    transform: scale(1.06);
+  }
+  #rond .fw-light:hover{
+    color: aliceblue;
+    background-color: rgb(113, 111, 111);
+    border-radius: 15px;
+    box-shadow:5px 5px 5px rgb(101, 90, 90) ;
+  }
+  #img:hover{
+    transform: scale(1.05);
+  }
+  #h:hover{  --s: 0.1em;   /* the thickness of the line */
+  --c: #f70004f7; /* the color */
+  
+  color: #0000;
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg,var(--c) 50%,#807f7f 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 1.9s;
+}
+.hover:hover {
+  --_p: 100%
+}
+
+    #fst,#fst3{
+      .bottom-left {
+       position: absolute;
+       bottom: 8px;
+       left: 16px;
+        }
+        h2,h6{
+          font-family: 'Times New Roman', Times, serif;
+          color: rgb(208, 206, 206);
+        }
+    }
+    input{
+     width: 50%;
+     padding: 10px;
+     border: 1px solid grey;
+     border-radius: 15px;
+     cursor: pointer;
+    }
+    button{
+      width: 15%;
+      padding: 5px;
+      background-color: rgb(238, 238, 105);
+      border: 0px;
+    }
+    #scnd{
+      background-color: rgb(235, 232, 232);
+    }
+    .top-right {
+  position: absolute;
+  top: 665px;
+  right: 35px;
+  font-size: 45px;
+  font-style: italic;
+  font-family: cursive;
+  color: aliceblue;
+  background-color: rgb(57, 14, 14);
+}
+.top-right:hover{
+  color: #03030300;
+  background: 
+    linear-gradient(90deg,#5d101f 50%,#f4f2f2 0) 
+    var(--_p,100%)/200% no-repeat;
+  -webkit-background-clip: text;
+          background-clip: content-box;
+  transition: .4s;
+}
+
+   /* .centered {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 50px;
+  }
+   .overlay {
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 120px;
+  right: 0;
+  opacity: 0;
+  transition: .5s ease;
+  width: 500px;
+  height: 500px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+}
+  .container:hover .overlay {
+  opacity: 1;
+}*/
+.dropdown-menu {
+  background-color: #131212;
+}
+.dropdown-item{
+  color: rgb(251, 243, 243);
+  padding: 12px 16px;
+  text-decoration: none;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+@media only screen and (min-width: 300px) and (max-width: 800px){
+#cook{width: 20%; height: 25%;}
+.icon{display: none;}
+.top-right{  position: absolute; top: 215px; right: 10px; font-size: 15px;}
+#fst{width: 50%;}
+#fst3{display: none;}
+#fst,h2{font-size: medium;}
+#fst,h6{font-size: smaller;}
+#rond{width: 30%;  padding-right: 20px;margin-right: auto;}
+.rounded-circle{width: 100%;height: 70%;}
+.fw-light{font-size: x-small;}
+#sqr{width: 50%;}
+.card-title{width: 100%;font-size:large;font:bolder;}
+#img{width: 115%; position: relative;right: 10%;}
+.phide{display: none;}
+#ihide{display: none;}
+#left{ position: relative;left: 10%;}
+}
+ 
+
+    </style>  
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="data:image/png;base64,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" alt="">
-                <marquee behavior="" direction="up">
-                <h1 style="padding-left: 50px; "><b>Hungry?!!</b></h1></marquee>  
-                <p style="font-size: 20px;">Order food from favourite restaurants near you.</p>
-                <br><br>
-                <div class="input-group input-group-lg mb-3">
-                    <input type="text" class="form-control" placeholder="Enter your Delivery location">
-                  </div>  <BR>
-                  <a href="#" class="btn btn-warning btn-lg">FIND FOOD</a></h3>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHhcucClCALHwc_ldUU7GMg31Qsc6RKc7keR7l9QzUaeTk3ohN77f95Zlmhx8eUHoxidY&usqp=CAU" alt="" height="150px" id="cook">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-4" href="#" role="button" data-bs-toggle="dropdown">Recepies</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Breakfast Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Brunch Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Lunch Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Dinner Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Dessert Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Baking Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Drink&Cocktail Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Quick&Easy Recepies</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-4" href="#" role="button" data-bs-toggle="dropdown">Popular</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Trending Now</a></li>
+                  <li><a class="dropdown-item" href="#">Cassarole Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Chilli Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Soup Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Pasta Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Bread Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Cookie Recepies</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-4" href="#" role="button" data-bs-toggle="dropdown">Meat & Seafood</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Chicken Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Salmon Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Pork Chop Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Group Beef Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Shrimp Recepies</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-4" href="#" role="button" data-bs-toggle="dropdown">Healthy & Diet</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Healthy Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Vegiterian Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Vegan Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Low-Crab Recepies</a></li>
+                  <li><a class="dropdown-item" href="#">Gutan-Free Recepies</a></li>
 
-            </div>
-    
-               <div class="col-md-4">
-                <h3><a href="#" style="color: black;"><b>LOGIN</b></a>
-    
-               <a href="#" class="btn btn-warning btn-lg">SIGNUP</a></h3>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-4" href="#" role="button" data-bs-toggle="dropdown">Holidays</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Valentine's Day Recipes</a></li>
+                  <li><a class="dropdown-item" href="#">Game Day Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> St. Patrick's Day Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> Easter Recipes</a></li>
+                  <li><a class="dropdown-item" href="#">  Cinco de Mayo Recipes </a></li>
+                  <li><a class="dropdown-item" href="#">  Mother's Day Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> Memorial Day Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> Juneteenth Recipes </a></li>
+                  <li><a class="dropdown-item" href="#"> Halloween Recipes  </a></li>
+                  <li><a class="dropdown-item" href="#">  Thanksgiving Recipes </a></li>
+                  <li><a class="dropdown-item" href="#">  Christmas Recipes </a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-4" href="#" role="button" data-bs-toggle="dropdown">Cuisin</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Mexican Recipes</a></li>
+                  <li><a class="dropdown-item" href="#">Italian Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> Indian Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> Thai Recipes </a></li>
+                  <li><a class="dropdown-item" href="#">Korean Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> French Recipes</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ps-4" href="#" role="button" data-bs-toggle="dropdown">Seasonal</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Spring Recipes</a></li>
+                  <li><a class="dropdown-item" href="#">  Summer Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> Fall Recipes</a></li>
+                  <li><a class="dropdown-item" href="#"> Winter Recipes</a></li>
+                </ul>
+              </li>
 
-              </div>
-        
-            <div class="col-md-4">
-                <img src="https://c4.wallpaperflare.com/wallpaper/869/719/717/cuisine-food-india-indian-wallpaper-preview.jpg" alt="" width="250px" height="250px">
-            </div>
-     </div>
-     </div>
-    
-    <div class="container-fluid" style="background-color: rgb(100, 4, 4);">
-   <div class="row">
-    <div class="col-md-4">
-        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_210,h_398/4x_-_No_min_order_x0bxuf" alt="" width="100px">
-        <h3 style="color: white;"><b>No Minimum Order</b></h3>
-        <p style="color: white;">Order in for yourself or for the group, with no restrictions on order value</p>
-    </div>
-    <div class="col-md-4">
-        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy" alt="" width="100px">
-        <h3 style="color: white;"><b>Live Order Tracking</b></h3>
-        <p style="color: white;">Know where your order is at all times, from the restaurant to your doorstep</p>
-    </div>
-    <div class="col-md-4">
-        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn" alt="" width="100px" style="margin-top: 30px;">
-        <h3 style="color: white;"><b>Lightning-Fast Delivery</b></h3>
-        <p style="color: white;">Experience Swiggy's superfast delivery for food delivered fresh & on time</p>
-   <br><br><br><br><br>
-    </div>
-   </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="col-md-6">
-            <br><br><br><br>
-            <h1 style="font-size: 50px;"><b>Restaurants in <br> your pocket</b></h1>
-            <p style="font-size: 20px;">Order from your favorite restaurants & track <br> on the go, with the all-new Swiggy app.</p><br>
-            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp" alt="" width="200px">
-            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty" alt="" width="200px">
+            </ul>
+          </div>
+          <div class="icon">
+          <a href="#scnd"><svg  xmlns="http://www.w3.org/2000/svg" style="color: white;" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg></a>
+          <a href=""><svg xmlns="http://www.w3.org/2000/svg"  style="color: white;" width="25" height="25" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+          </svg></a>
+          <a href=""><svg xmlns="http://www.w3.org/2000/svg" style="color: white;" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+          </svg></a>
+          </div>
         </div>
-        <div class="col-md-6">
-        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_768,h_978/pixel_wbdy4n" alt="" width="300px">
-   <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_768,h_978/iPhone_wgconp_j0d1fn" alt="" width="300px">
-    
-</div>
-    </div>
+      </nav>
+
+      <div id="up">
+        <img src="https://media.istockphoto.com/id/922783734/photo/assorted-indian-recipes-food-various.jpg?s=1024x1024&w=is&k=20&c=samPmisz6bQ-oS6PxnbAZZOgK1aFTIPKbiK8s4PsRxU=" alt=""  class="d-block w-100 h-50">
+        <div class="top-right"> Satisfy Your Every Craving </div>
+        <div class="overlay">
+        <div class="centered text-white fw-bold">Explore Our delicious & Healthy Recepies</div>
+      </div></div>
+
+      <div class="container">
+        <h1 class="fw-bold">What We're Craving</h1>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-4" id="fst">
+                <div class="card">
+                  <img src="https://cdn.pixabay.com/photo/2020/02/01/06/13/vegan-4809593_640.jpg" alt="">
+                  <div class="bottom-left fw-bold"><h6>COLLECTION</h6>
+                    <h2>TOP 100 HEALTHY FOOD RECEPIES</h2></div>
+                </div></div>
+                <div class="col-md-4" id="fst">
+                 <div class="card">
+                  <img src="https://cdn.pixabay.com/photo/2019/07/21/01/36/tacos-al-pastor-4351813_640.jpg" alt="">
+                  <div class="bottom-left fw-bold"><h6>COLLECTION</h6>
+                  <h2>TOP 100 COMFORT FOOD RECEPIES</h2></div>
+                </div></div>
+                <div class="col-md-4" id="fst3">
+                <div class="card">
+                  <img src="https://cdn.pixabay.com/photo/2017/08/08/08/59/pasta-2610762_640.jpg" alt="">
+                  <div class="bottom-left fw-bold"><h6>COLLECTION</h6>
+                  <h2>TOP 100 INSTANT POT RECEPIES</h2></div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="container">
+        <h1 class="fw-bold">Explore More</h1>
+      </div>
+      <br>
+      <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-2"  id="rond">
+          <img src="https://wallpapercave.com/wp/wp3376130.jpg" alt="" class="rounded-circle" width="150px" height="150px">
+          <h4 class="fw-light ps-2">Delicious Cake</h4>
+        </div>
+        <div class="col-md-2"  id="rond">
+          <img src="https://wallpapercave.com/wp/wp3495556.jpg" alt="" class="rounded-circle" width="150px" height="150px">
+          <h4 class="fw-light ps-2">Evening Snacks</h4>
+        </div>
+        <div class="col-md-2"  id="rond">
+          <img src="https://wallpapercave.com/wp/wp3495561.jpg" alt="" class="rounded-circle" width="150px" height="150px">
+          <h4 class="fw-light ps-3">Classic Burger</h4>
+        </div>
+        <div class="col-md-2"  id="rond">
+          <img src="https://wallpapercave.com/wp/wp3376124.jpg" alt="" class="rounded-circle" width="150px" height="150px">
+          <h4 class="fw-light ps-3">Quick Fillings</h4>
+        </div>
+        <div class="col-md-2"  id="rond">
+          <img src="https://wallpapercave.com/wp/wp3376121.jpg" alt="" class="rounded-circle" width="150px" height="150px">
+          <h4 class="fw-light ps-2">Seafood Dishes</h4>
+        </div>
+        <div class="col-md-2"  id="rond">
+          <img src="https://c8.alamy.com/comp/EWWDX9/bombay-chicken-biryani-1-EWWDX9.jpg" alt="" class="rounded-circle" width="150px" height="150px">
+          <h4 class="fw-light ps-2">Instant Biriyani</h4> </div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <h1 class="fw-bold">Trendind Now</h1>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3" id="sqr">
+            <div class="card">
+             <img src="https://cdn.pixabay.com/photo/2016/06/28/17/32/salmon-1485014_640.jpg" alt="">
+             <div class="card-body">
+              <h4 class="card-title">Grilled Fish</h4></div>
+            </div></div>
+            <div class="col-md-3" id="sqr">
+            <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg" alt="">
+            <div class="card-body">
+              <h4 class="card-title">BBQ Chicken Pizza</h4></div>   
+          </div></div>
+            <div class="col-md-3" id="sqr">
+             <div class="card">
+             <img src="https://cdn.pixabay.com/photo/2022/06/07/20/52/curry-7249247_640.jpg" alt="">
+             <div class="card-body">
+              <h4 class="card-title">Butter Chicken Curry</h4></div>    
+            </div></div>
+            <div class="col-md-3" id="sqr">
+            <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2014/04/05/11/19/turkey-315079_640.jpg" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Turkey Roast</h4></div>        
+          </div></div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3" id="sqr">
+            <div class="card">
+              <img src="https://cdn.pixabay.com/photo/2017/07/16/10/43/recipe-2508859_640.jpg" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Turkey Roast</h4></div> 
+            </div></div>
+            <div class="col-md-3" id="sqr">
+            <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2014/05/26/14/53/sushi-354628_640.jpg" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Japanese Sushi</h4></div> 
+              </div></div>
+            <div class="col-md-3" id="sqr">
+            <div class="card">
+             <img src="https://cdn.pixabay.com/photo/2018/01/08/17/28/mushrooms-3069816_640.jpg" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">Mushroom Dish</h4></div> 
+                </div></div>
+             <div class="col-md-3" id="sqr">
+             <div class="card">
+             <img src="https://cdn.pixabay.com/photo/2017/03/10/13/49/fast-food-2132863_640.jpg" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">Hot Dog</h4></div> 
+                  </div></div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3" id="sqr">
+            <div class="card">
+              <img src="https://cdn.pixabay.com/photo/2017/01/19/05/14/korean-cuisine-1991580_640.jpg" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Korean Cuisin</h4></div> 
+            </div></div>
+            <div class="col-md-3" id="sqr">
+            <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2018/10/22/22/18/steak-3766548_640.jpg" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Steak</h4></div> 
+              </div></div>
+            <div class="col-md-3" id="sqr">
+            <div class="card">
+             <img src="https://cdn.pixabay.com/photo/2012/02/26/10/51/beef-17040_1280.jpg" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">Cheese Cuisin</h4></div> 
+                </div></div>
+             <div class="col-md-3" id="sqr">
+             <div class="card">
+             <img src="https://cdn.pixabay.com/photo/2013/07/19/00/18/seafood-165220_640.jpg" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">Seafood</h4></div> 
+                  </div></div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3" id="sqr">
+            <div class="card">
+              <img src="https://cdn.pixabay.com/photo/2017/02/25/15/08/dimsum-2097947_960_720.jpg" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Chinease Cuisin</h4></div> 
+            </div></div>
+            <div class="col-md-3" id="sqr">
+            <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2015/07/09/19/43/eggplant-838314_640.jpg" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Eggplant Roasted</h4></div> 
+              </div></div>
+            <div class="col-md-3" id="sqr">
+            <div class="card">
+             <img src="https://cdn.pixabay.com/photo/2016/06/30/18/54/sardines-1489630_640.jpg" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">Sardines Fish</h4></div> 
+                </div></div>
+             <div class="col-md-3" id="sqr">
+             <div class="card">
+             <img src="https://cdn.pixabay.com/photo/2017/04/04/00/36/ramen-2199962_640.jpg" alt="">
+                  <div class="card-body">
+                    <h4 class="card-title">Japanese Ramen</h4></div> 
+                  </div></div>
+        </div>
+      </div>
+      <br><br>
+      <div class="container border">
+        <div class="row">
+          <div class="col-lg-8">
+            <img id="img" src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_1280,ar_16:9/v1/img/recipes/54/32/04/jaZWq4VnRbeqrr2zc2U6_garlic-bread-beauty-1.jpg" alt="" width="750px">
+          </div>
+          <div class="col-lg-4 ps-5 mt-5">
+            <h6>COLLECTION</h6><br>
+            <h2 id="h">HOW TO MAKE GARLIC BREAD</h2><br>
+            <h6 class="phide">Looking to seriously up your garlic bread game? Try this recipe for a classic toasty loaf. It’s golden brown with crusty edges, 
+              extra-garlicky, and a little cheesy. What’s not to love?By Heather Baird</h6>
+          </div>
+        </div></div>
+      <br>
+      <div class="container border">
+        <div class="row">
+          <div class="col-lg-4 ps-5 mt-5" >
+            <h6 >COLLECTION</h6><br>
+            <h2 id="h">48 OOEY-GOOEY DESSERT RECIPES</h2><br>
+            <h6 class="phide">Whether they're dripping in syrup, sticky with caramel or oozing with molten chocolate, ooey-gooey desserts are some of the most crave-worthy.</h6>
+          </div>
+          <div class="col-lg-8">
+            <img id="img" src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_1280,ar_16:9/v1/img/recipes/95/33/ZZC9JVKeQRy7CxLgquhS_untitled-2568.jpg" alt="" width="750px">
+          </div>
+        </div></div>
+        <br>
+        <div class="container border">
+          <div class="row">
+            <div class="col-lg-8">
+              <img id="img" src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_1280,ar_16:9/v1/img/recipes/38/50/05/joT0qwWrToSqfqSWpO4w_0S9A4830.jpg" alt="" width="750px">
+            </div>
+            <div class="col-lg-4 ps-5 mt-5">
+              <h6 >COLLECTION</h6><br>
+              <h2 id="h">17 WANDERLUST-WORTHY COMFORT FOODS</h2><br>
+              <h6 class="phide">We're certain these global comforts will leave you lusting after steaming bowls of potato soup, slathered fries, Spanish tortillas and more.</h6>
+            </div>
+          </div></div>
+          <br><br>
+          <div class="container-fluid" id="scnd" style="text-align: center;"><br><br>
+            <h2>FIND MORE RECEPIES</h2><br>
+            <div class="search-container">
+                <input type="text" placeholder="I'm craving.." name="search"><br><br>
+                <button type="submit">Search</button><br><br>
+          </div>
+          <br>
+          <div class="container-fluid bg-dark">
+            <div class="row">
+            <div class="col-md-6 text-start"><br><br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="color: white;" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="color: white;" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="color: white;" fill="currentColor" class="bi bi-messenger" viewBox="0 0 16 16">
+              <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.64.64 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.64.64 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76m5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="color: white;" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="color: white;" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+            </svg>
+            <a id="ihide" href="#up"><svg xmlns="http://www.w3.org/2000/svg"  style="color: white;" width="25" height="25" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
+            </svg></a>
+            <br><br>
+            <h6 class="text-white" id="left">All Categories |
+              Site | Map |
+              About Us |
+              Help</h6><br><br>
+              </div>
+              <div class="col-md-6"><br><br>
+                <h6 class="text-white">Advertise |
+                  AdChoices |
+                  Privacy Notice |
+                  Visitor Agreement |
+                  California Privacy Notice |
+                  Do Not Sell or Share My Personal Information </h6>
+              </div>
+          </div></div>
 </body>
 </html>
