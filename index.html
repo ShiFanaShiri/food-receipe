@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="data:image/png;base64,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" alt="">
+                <marquee behavior="" direction="up">
+                <h1 style="padding-left: 50px; "><b>Hungry?!!</b></h1></marquee>  
+                <p style="font-size: 20px;">Order food from favourite restaurants near you.</p>
+                <br><br>
+                <div class="input-group input-group-lg mb-3">
+                    <input type="text" class="form-control" placeholder="Enter your Delivery location">
+                  </div>  <BR>
+                  <a href="#" class="btn btn-warning btn-lg">FIND FOOD</a></h3>
+
+            </div>
+    
+               <div class="col-md-4">
+                <h3><a href="#" style="color: black;"><b>LOGIN</b></a>
+    
+               <a href="#" class="btn btn-warning btn-lg">SIGNUP</a></h3>
+
+              </div>
+        
+            <div class="col-md-4">
+                <img src="https://c4.wallpaperflare.com/wallpaper/869/719/717/cuisine-food-india-indian-wallpaper-preview.jpg" alt="" width="250px" height="250px">
+            </div>
+     </div>
+     </div>
+    
+    <div class="container-fluid" style="background-color: rgb(100, 4, 4);">
+   <div class="row">
+    <div class="col-md-4">
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_210,h_398/4x_-_No_min_order_x0bxuf" alt="" width="100px">
+        <h3 style="color: white;"><b>No Minimum Order</b></h3>
+        <p style="color: white;">Order in for yourself or for the group, with no restrictions on order value</p>
+    </div>
+    <div class="col-md-4">
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy" alt="" width="100px">
+        <h3 style="color: white;"><b>Live Order Tracking</b></h3>
+        <p style="color: white;">Know where your order is at all times, from the restaurant to your doorstep</p>
+    </div>
+    <div class="col-md-4">
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn" alt="" width="100px" style="margin-top: 30px;">
+        <h3 style="color: white;"><b>Lightning-Fast Delivery</b></h3>
+        <p style="color: white;">Experience Swiggy's superfast delivery for food delivered fresh & on time</p>
+   <br><br><br><br><br>
+    </div>
+   </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-6">
+            <br><br><br><br>
+            <h1 style="font-size: 50px;"><b>Restaurants in <br> your pocket</b></h1>
+            <p style="font-size: 20px;">Order from your favorite restaurants & track <br> on the go, with the all-new Swiggy app.</p><br>
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp" alt="" width="200px">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty" alt="" width="200px">
+        </div>
+        <div class="col-md-6">
+        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_768,h_978/pixel_wbdy4n" alt="" width="300px">
+   <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_768,h_978/iPhone_wgconp_j0d1fn" alt="" width="300px">
+    
+</div>
+    </div>
+</body>
+</html>
